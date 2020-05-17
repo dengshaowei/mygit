@@ -1,0 +1,61 @@
+{
+  "name": "tcpos_web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.18.1",
+<<<<<<< HEAD
+    "element-ui": "^2.10.1",
+    "fundebug-javascript": "^1.9.0",
+=======
+    "echarts": "^4.2.1",
+    "element-ui": "^2.10.0",
+    "fundebug-javascript": "^1.8.2",
+>>>>>>> 4203159... add
+    "fundebug-vue": "0.0.1",
+    "hanutil": "^1.2.3",
+    "normalize.css": "^8.0.1",
+    "register-service-worker": "^1.6.2",
+    "tc-http": "0.0.9",
+    "vue": "^2.6.10",
+<<<<<<< HEAD
+    "vue-router": "^3.0.7",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "xgplayer": "^2.1.2"
+=======
+    "vue-echarts": "^4.0.3",
+    "vue-router": "^3.0.6",
+    "webpack-bundle-analyzer": "^3.3.2"
+>>>>>>> 4203159... add
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.9.2",
+    "@vue/cli-plugin-eslint": "^3.9.2",
+    "@vue/cli-plugin-pwa": "^3.9.0",
+    "@vue/cli-service": "^3.9.3",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.2",
+    "babel-plugin-component": "^1.1.1",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "babel-polyfill": "^6.26.0",
+    "compression-webpack-plugin": "^2.0.0",
+    "es6-promise": "^4.2.8",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-html": "^5.0.5",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^3.0.1",
+    "img-loader": "^3.0.1",
+    "vue-template-compiler": "^2.6.10"
+  }
+}

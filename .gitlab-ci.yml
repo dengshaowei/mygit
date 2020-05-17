@@ -1,0 +1,81 @@
+stages:
+  - build test
+  - build production
+  - deploy test
+  - deploy production
+
+# 编译 ---------------------------------#
+test build:
+  stage: build test
+  before_script:
+    - npm i --progress=false
+  cache:
+    untracked: true
+    paths:
+      - node_modules/
+  script:
+    - npm run build
+  artifacts:
+    expire_in: 1 day
+    name: '$CI_COMMIT_REF_NAME'
+    paths:
+      - dist/
+  only:
+    - develop
+  tags:
+    - linux public
+
+production build:
+  stage: build production
+  before_script:
+    - npm i --progress=false
+  cache:
+    untracked: true
+    paths:
+      - node_modules/
+  script:
+    - npm run build
+  artifacts:
+    expire_in: 1 month
+    name: '$CI_COMMIT_REF_NAME'
+    paths:
+      - dist/
+  only:
+    - master
+  tags:
+    - linux public
+
+# --------------------------------------#
+
+# 部署 ---------------------------------#
+test deploy:
+  stage: deploy test
+  script:
+    - chcp 65001
+    - call xcopy dist %TEST_SITE_PATH% /e /y
+  only:
+    - develop
+  dependencies:
+    - test build
+  environment:
+    name: god
+    url: https://posweb.lbbcol.com
+  tags:
+    - 139.196.148.13 public
+
+production deploy:
+  stage: deploy production
+  script:
+    - chcp 65001
+    - call xcopy dist %PUBLISH_SITE_PATH% /e /y
+  only:
+    - master
+  dependencies:
+    - production build
+  environment:
+    name: production
+    url: https://posweb.lbbcol.com
+  when: manual
+  tags:
+    - 139.196.148.13 public
+# --------------------------------------#
